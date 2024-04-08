@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>جمعيه اتقان الخيريه</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="crud">
+      <div class="head">
+        <h2>جمعيه اتقان الخيرية</h2>
+        <p>students MANAGEMENT SYSTEM</p>
+      </div>
+
+      <div class="inputs">
+        <input placeholder="اسم الطالب" type="text" id="title" />
+        <div class="price">
+          <input
+            onkeyup="getTotal()"
+            type="number"
+            id="price"
+            placeholder="رقم ولي الامر"
+          />
+          <input
+            onkeyup="getTotal()"
+            type="number"
+            id="taxes"
+            placeholder="عمر الطالب "
+          />
+          <input
+            onkeyup="getTotal()"
+            type="text"
+            id="ads"
+            placeholder="المستوى"
+          />
+          <input
+            onkeyup="getTotal()"
+            type="text"
+            id="discount"
+            placeholder="اسم المعلم"
+          />
+          <small id="total"></small>
+        </div>
+        <input placeholder="عدد الاحزاء" type="number" id="count" />
+        <input placeholder="نظام الحضور" type="text" id="category" />
+        <button id="submit" onclick="createProduct()">اضافه الطالب</button>
+      </div>
+
+      <div class="outputs">
+        <div class="searchblock">
+          <input
+            onkeyup="searchData(this.value)"
+            type="text"
+            id="search"
+            placeholder="البحث"
+          />
+          <div class="btnsearch">
+            <button onclick="getsearchMood(this.id)" id="searchTitle">
+              البحث باسم الطالب
+            </button>
+            <button onclick="getsearchMood(this.id)" id="searchcategory">
+              البحث بنظام الحضور
+            </button>
+          </div>
+        </div>
+      </div>
+      <div id="deleteAll"></div>
+      <table>
+        <thead>
+          <tr>
+            <th>كود</th>
+            <th>اسم الطالب</th>
+            <th>رقم ولي الامر</th>
+            <th>عمر الطالب</th>
+            <th>المستوى</th>
+            <th>اسم المعلم</th>
+            <th>المجموع</th>
+            <th>نظام الحضور</th>
+            <th>update</th>
+            <th>delete</th>
+          </tr>
+        </thead>
+        <tbody id="tbody"></tbody>
+      </table>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>
